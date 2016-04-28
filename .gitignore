@@ -3,3 +3,4 @@
 *.ear
 *.class
 **/target/**
+/blueskies-core/flyway.properties

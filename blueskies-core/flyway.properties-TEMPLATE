@@ -1,0 +1,5 @@
+# This file contains the Flyway configuration properties
+flyway.url = 
+flyway.user = 
+flyway.password = 
+flyway.schemas = 

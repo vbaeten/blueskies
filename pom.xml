@@ -23,10 +23,14 @@
         
         <!-- Test dependency versions -->
         <junit.version>4.12</junit.version>
+        <h2.version>1.4.191</h2.version>
+        <postgresql.version>9.4.1208</postgresql.version>
+        <flyway.version>4.0</flyway.version>
         
         <!-- Plugin versions -->
         <maven.ejb.plugin.version>2.5.1</maven.ejb.plugin.version>
         <maven.ear.plugin.version>2.10.1</maven.ear.plugin.version>
+        <flyway.plugin.version>4.0</flyway.plugin.version>
     </properties>
     
     <dependencyManagement>
@@ -57,6 +61,24 @@
                 <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${flyway.version}</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     
@@ -73,6 +95,13 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-ear-plugin</artifactId>
                     <version>${maven.ear.plugin.version}</version>
+                </plugin>
+                
+                <!-- Environment set-up -->
+                <plugin>
+                    <groupId>org.flywaydb</groupId>
+                    <artifactId>flyway-maven-plugin</artifactId>
+                    <version>${flyway.plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
